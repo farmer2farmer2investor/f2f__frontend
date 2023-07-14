@@ -1,8 +1,14 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
+
+// stylesheet
+import classes from './Home.module.css';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className={classes.home}>
+      <Navbar />
+    </div>
   )
 }
 

@@ -27,14 +27,14 @@
     margin-bottom: 2rem;
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-input {
+.infoInput {
     outline: none;
     border: none;
     height: 3rem;

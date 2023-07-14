@@ -72,7 +72,7 @@ const Auth = () => {
         <h1 className={classes.authHeading}>
           {isRegister ? "Register as an Farmer" : "Login to your Account"}
         </h1>
-        <form onSubmit={handleSubmit}>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <input
             required
             type="text"

@@ -18,6 +18,10 @@ const App = () => {
         <Routes>
           <Route
             exact path='/'
+            element={<Home />}
+          />
+          {/* <Route
+            exact path='/'
             element={user ? <Navigate to="home" /> : <Navigate to="auth" />}
           />
           <Route
@@ -39,7 +43,7 @@ const App = () => {
                 <p>There's nothing here!</p>
               </main>
             }
-          />
+          /> */}
         </Routes>
       </div>
     </div>
