@@ -1,0 +1,89 @@
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.leftContainer {
+    width: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rightContainer {
+    width: 550px;
+}
+
+.authHeading {
+    color: var(--secondary-green);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+input {
+    outline: none;
+    border: none;
+    height: 3rem;
+    width:  250px;
+    margin: 5px 0;
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+.registerContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.passwordContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.submitContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    background-color: #00ED64;
+    color: var(--primary-text);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 32px;
+    border: 1px solid #111;
+    border-radius: 4px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-radius: 30px;
+}

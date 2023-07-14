@@ -1,13 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;800&family=Tilt+Neon&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Tilt Neon', cursive;
+}
+
+:root {
+  /* fonts and typography */
+  --body-font-first: 'Chakra Petch', sans-serif;
+  --body-font-second: 'JetBrains Mono', monospace;
+  --body-font-third: 'Tilt Neon', cursive;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
+
+  /* Background Color */
+  --bg-dark: #111;
+  --bg-white: #fff;
+
+  /* Text Colors */
+  --primary-text: #061738;
+  --secondary-color: #60cd12;
+  --text-white: #fff;
+  --text-gray: #dee2e6;
+  --anchor-color: #007aff;
+
+  /* green color */
+  --primary-green: #00ED64;
+  --secondary-green: #13aa52;
+  --tertiary-green: #023430;
+
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(237, 237, 237);
+  border-radius: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }
