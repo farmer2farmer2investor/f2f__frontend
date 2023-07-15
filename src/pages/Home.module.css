@@ -1,4 +1,11 @@
 .home {
     max-width: 1200px;
+    height: 100vh;
     margin: 0 auto;
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }

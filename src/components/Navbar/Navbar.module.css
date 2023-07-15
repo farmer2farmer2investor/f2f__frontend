@@ -1,11 +1,14 @@
 .navbarContainer {
-    width: 100%;
+    position: fixed;
+    width: 1200px;
     height: 8vh;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid var(--secondary-green);
+    /* z-index: var(--z-modal); */
+    background: #fff;
 }
 
 .icon {
