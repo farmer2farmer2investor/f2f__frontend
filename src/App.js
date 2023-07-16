@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import Home from './pages/Home';
 import Profile from './pages/Profile/Profile';
 import Auth from './pages/Auth/Auth';
+import Upload from './components/Upload/Upload';
 
 
 import './App.css';
@@ -16,9 +17,13 @@ const App = () => {
     <div>
       <div>
         <Routes>
-          <Route
+          {/* <Route
             exact path='/'
             element={<Home />}
+          /> */}
+          <Route
+            exact path='/upload'
+            element={<Upload />}
           />
           {/* <Route
             exact path='/'
