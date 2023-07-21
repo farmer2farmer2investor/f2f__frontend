@@ -1,6 +1,6 @@
 .posts {
     flex: 1;
     margin-top: 8vh;
-    margin-left: 500px;
+    margin-left: 400px;
     overflow-y: scroll;
 }

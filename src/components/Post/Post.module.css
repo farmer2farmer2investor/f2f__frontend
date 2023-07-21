@@ -1,0 +1,48 @@
+.postContainer {
+    margin: 2rem;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.icon {
+    font-size: 2rem;
+    color: var(--secondary-green);
+}
+
+.topContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile {
+    width: 40px;
+}
+
+.descContainer {
+    margin-top: .5rem;
+    font-size: var(--small-font-size);
+    color: gray;
+    font-weight: bolder;
+}
+
+.bottomContainer {
+    /* width: 100%; */
+    margin-top: 1rem;
+}
+
+.postImage {
+    width: 500px;
+    border-radius: 10px;
+}
+
+.likeContainer {
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 2px solid var(--secondary-green);
+    border-radius: 2px;
+}
