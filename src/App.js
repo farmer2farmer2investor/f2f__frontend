@@ -17,10 +17,10 @@ const App = () => {
     <div>
       <div>
         <Routes>
-          {/* <Route
+          <Route
             exact path='/'
             element={<Home />}
-          /> */}
+          />
           <Route
             exact path='/upload'
             element={<Upload />}
@@ -36,6 +36,10 @@ const App = () => {
           <Route
             exact path='/auth'
             element={user ? <Navigate to="../home" /> : <Auth />}
+          />
+          <Route
+            exact path='/profile/:id'
+            element={user ? <Profile /> : <Navigate to="../auth" />}
           />
           <Route
             exact path='/profile/:id'
