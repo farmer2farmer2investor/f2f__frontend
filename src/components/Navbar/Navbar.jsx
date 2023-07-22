@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className={classes.combineContainer}>
         <div className={classes.uploadContainer}>
           <FiPlus className={classes.icon} />
-          <h3>upload</h3>
+          <h5>upload</h5>
         </div>
         <div className={classes.profileContainer}>
           <img className={classes.profile} src={profile} alt="profile user" />

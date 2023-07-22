@@ -5,11 +5,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-}
-
-.icon {
-    font-size: 2rem;
-    color: var(--secondary-green);
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    border-radius: 1rem;
 }
 
 .topContainer {
@@ -17,32 +15,72 @@
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 5px;
 }
 
 .profile {
     width: 40px;
 }
 
-.descContainer {
-    margin-top: .5rem;
-    font-size: var(--small-font-size);
-    color: gray;
-    font-weight: bolder;
+.contentContainer {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--text-gray);
+    border-radius: 5px;
 }
 
-.bottomContainer {
-    /* width: 100%; */
+.postimage {
+    width: 100%;
+}
+
+.contentInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
     margin-top: 1rem;
 }
 
-.postImage {
-    width: 500px;
-    border-radius: 10px;
+.date {
+    font-size: var(--small-font-size);
+    color: #b0b0b0;
+}
+
+.heading {
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+}
+
+.description {
+    font-size: var(--normal-font-size);
 }
 
 .likeContainer {
     width: 100%;
-    margin-top: 10px;
-    border-bottom: 2px solid var(--secondary-green);
-    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.btn {
+    /* background-color: #00ED64; */
+    color: var(--primary-text);
+    font-weight: 500;
+    padding: 6px 15px;
+    border: 1px solid #111;
+    border-radius: 4px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.count {
+    color: var(--secondary-green);
+    font-size: var(--h2-font-size);
+    font-weight: bold;
 }

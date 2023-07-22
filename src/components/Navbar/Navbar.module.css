@@ -13,7 +13,7 @@
 
 .icon {
     color: var(--secondary-green);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .logo {
@@ -58,11 +58,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 200px;
 }
 
 .uploadContainer {
-    width: 120px;
+    width: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;

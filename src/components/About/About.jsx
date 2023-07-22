@@ -35,7 +35,7 @@ const About = () => {
                     width: '1.5px',
                     height: '100%',
                     backgroundColor: "#13aa52",
-                    borderRadius: "px"
+                    borderRadius: "2px"
                 }}>
                 </div>
                 <div className={classes.followingContainer}>

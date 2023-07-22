@@ -19,16 +19,23 @@ const Sidebar = () => {
       <div className={classes.menuContainer}>
         <div>
           <FiHome className={classes.icon} />
-          <h3>Home</h3>
+          <h4>Home</h4>
         </div>
         <div>
           <BsNewspaper className={classes.icon} />
-          <h3>News</h3>
+          <h4>News</h4>
         </div>
         <div>
           <FcAbout className={classes.icon} />
-          <h3>About</h3>
+          <h4>About</h4>
         </div>
+      </div>
+      <div style={{
+        width: '100%',
+        height: '1.5px',
+        backgroundColor: '#13aa52'
+      }}>
+
       </div>
       <p style={{
         margin: "1rem 0"
@@ -36,31 +43,31 @@ const Sidebar = () => {
       <div className={classes.categoryContainer}>
         <div>
           <TbMilk className={classes.icon} />
-          <p>Dairy</p>
+          <h5>Dairy</h5>
         </div>
         <div>
           <PiNotebookThin className={classes.icon} />
-          <p>Education</p>
+          <h5>Education</h5>
         </div>
         <div>
           <GiFishCorpse className={classes.icon} />
-          <p>Corps</p>
+          <h5>Corps</h5>
         </div>
         <div>
           <HiOutlineBuildingLibrary className={classes.icon} />
-          <p>Scheme</p>
+          <h5>Scheme</h5>
         </div>
         <div>
           <TbPlant className={classes.icon} />
-          <p>Mixed Farming</p>
+          <h5>Mixed Farming</h5>
         </div>
         <div>
           <BsGlobe2 className={classes.icon} />
-          <p>Technology</p>
+          <h5>Technology</h5>
         </div>
         <div>
           <TbToolsKitchen2Off className={classes.icon} />
-          <p>Tools</p>
+          <h5>Tools</h5>
         </div>
       </div>
       <div className={classes.accountsContainer}>

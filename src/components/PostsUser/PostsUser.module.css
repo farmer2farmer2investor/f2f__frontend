@@ -1,0 +1,11 @@
+.postsuser {
+    flex: 1;
+    margin-top: 8vh;
+    padding: 2rem;
+    margin-left: 400px;
+    overflow-y: scroll;
+}
+
+.heading {
+    font-size: var(--h3-font-size);
+}
