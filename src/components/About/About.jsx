@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GrConnect } from 'react-icons/gr';
-import { FiSettings } from 'react-icons/fi';
 import testImage from '../../assets/test.png';
 
 
 // stylesheet
 import classes from './About.module.css';
+import Setting from '../Setting/Setting';
 
 const About = () => {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const handleOpenPopup = () => {
+        setIsPopupOpen(true);
+    }
+
+    const handleClosePopup = () => {
+        setIsPopupOpen(false);
+    }
     return (
         <div className={classes.about}>
             <div className={classes.imageContainer}>
@@ -52,9 +61,10 @@ const About = () => {
                     <p>joined 6 months ago</p>
                 </div>
             </div>
-            <button className={classes.settingBtn}>
+            <button className={classes.settingBtn} onClick={handleOpenPopup}>
                 <p>Setting</p>
             </button>
+            { isPopupOpen && <Setting onClose={handleClosePopup} /> }
         </div>
     )
 }
