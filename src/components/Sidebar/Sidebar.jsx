@@ -2,6 +2,13 @@ import React from 'react'
 import { FiHome } from 'react-icons/fi';
 import { BsNewspaper } from 'react-icons/bs';
 import { FcAbout } from 'react-icons/fc';
+import { TbMilk } from 'react-icons/tb';
+import { PiNotebookThin } from 'react-icons/pi';
+import { GiFishCorpse } from 'react-icons/gi';
+import { HiOutlineBuildingLibrary } from 'react-icons/hi2';
+import { TbPlant } from 'react-icons/tb';
+import { BsGlobe2 } from 'react-icons/bs';
+import { TbToolsKitchen2Off } from 'react-icons/tb';
 
 // stylesheet
 import classes from './Sidebar.module.css';
@@ -28,32 +35,32 @@ const Sidebar = () => {
       }}>Popular topics</p>
       <div className={classes.categoryContainer}>
         <div>
-          <FcAbout className={classes.icon} />
-          <h3>Fetilizer</h3>
+          <TbMilk className={classes.icon} />
+          <p>Dairy</p>
         </div>
         <div>
-          <FcAbout className={classes.icon} />
-          <h3>Fetilizer</h3>
+          <PiNotebookThin className={classes.icon} />
+          <p>Education</p>
         </div>
         <div>
-          <FcAbout className={classes.icon} />
-          <h3>Fetilizer</h3>
+          <GiFishCorpse className={classes.icon} />
+          <p>Corps</p>
         </div>
         <div>
-          <FcAbout className={classes.icon} />
-          <h3>Fetilizer</h3>
+          <HiOutlineBuildingLibrary className={classes.icon} />
+          <p>Scheme</p>
         </div>
         <div>
-          <FcAbout className={classes.icon} />
-          <h3>Fetilizer</h3>
+          <TbPlant className={classes.icon} />
+          <p>Mixed Farming</p>
         </div>
         <div>
-          <FcAbout className={classes.icon} />
-          <h3>Fetilizer</h3>
+          <BsGlobe2 className={classes.icon} />
+          <p>Technology</p>
         </div>
         <div>
-          <FcAbout className={classes.icon} />
-          <h3>Fetilizer</h3>
+          <TbToolsKitchen2Off className={classes.icon} />
+          <p>Tools</p>
         </div>
       </div>
       <div className={classes.accountsContainer}>

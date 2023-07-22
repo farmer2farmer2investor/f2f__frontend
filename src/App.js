@@ -25,6 +25,10 @@ const App = () => {
             exact path='/upload'
             element={<Upload />}
           />
+          <Route
+            exact path='/profile/:id'
+            element={<Profile />}
+          />
           {/* <Route
             exact path='/'
             element={user ? <Navigate to="home" /> : <Navigate to="auth" />}

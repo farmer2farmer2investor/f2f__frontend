@@ -1,0 +1,88 @@
+.about {
+    margin-top: 8vh;
+    height: 100%;
+    position: fixed;
+    width: 400px;
+    height: 92vh;
+    padding: 2rem;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1rem;
+    color: var(--secondary-green);
+}
+
+.image { 
+    width: 100px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-green);
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.name {
+    font-size: var(--h1-font-size);
+    color: var(--tertiary-green);   
+}
+
+.farmerType {
+    font-size: var(--normal-font-size);
+    color: gray;
+}
+
+.statContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 1rem 0; */
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--secondary-green);
+    border-top: 2px solid var(--secondary-green);
+}
+
+.statContainer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.infoContainer {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.durationContainer {
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.settingBtn {
+    color: var(--primary-text);
+    width: 100px;
+    font-weight: 500;
+    padding: 6px 15px;
+    border: 1px solid #111;
+    border-radius: 4px;
+    transition: 0.1s;
+    cursor: pointer;
+    margin-top: 2rem;
+}

@@ -1,0 +1,12 @@
+.profile {
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
