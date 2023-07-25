@@ -6,9 +6,10 @@ import { useSelector } from 'react-redux';
 import Home from './pages/Home';
 import Profile from './pages/Profile/Profile';
 import Auth from './pages/Auth/Auth';
-import Upload from './components/Upload/Upload';
+import Upload from './pages/Upload/Upload';
+import News from './pages/News/News';
 
-
+// stylesheet
 import './App.css';
 
 const App = () => {
@@ -17,9 +18,13 @@ const App = () => {
     <div>
       <div>
         <Routes>
-          <Route
+          {/* <Route
             exact path='/'
             element={<Home />}
+          />
+          <Route
+            exact path='/auth'
+            element={<Auth />}
           />
           <Route
             exact path='/upload'
@@ -29,7 +34,12 @@ const App = () => {
             exact path='/profile/:id'
             element={<Profile />}
           />
-          {/* <Route
+          <Route
+            exact path='/news'
+            element={<News />}
+          /> */}
+
+          <Route
             exact path='/'
             element={user ? <Navigate to="home" /> : <Navigate to="auth" />}
           />
@@ -46,8 +56,12 @@ const App = () => {
             element={user ? <Profile /> : <Navigate to="../auth" />}
           />
           <Route
-            exact path='/profile/:id'
-            element={user ? <Profile /> : <Navigate to="../auth" />}
+            exact path='/upload'
+            element={user ? <Upload /> : <Navigate to="../auth" />}
+          />
+          <Route
+            exact path='/news'
+            element={user ? <News /> : <Navigate to="../auth" />}
           />
           <Route
             exact path='*'
@@ -56,7 +70,7 @@ const App = () => {
                 <p>There's nothing here!</p>
               </main>
             }
-          /> */}
+          />
         </Routes>
       </div>
     </div>

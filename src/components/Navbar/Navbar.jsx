@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiPlus } from 'react-icons/fi';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { CgSearch } from 'react-icons/cg';
@@ -48,7 +49,12 @@ const Navbar = () => {
       <div className={classes.combineContainer}>
         <div className={classes.uploadContainer}>
           <FiPlus className={classes.icon} />
-          <h5>upload</h5>
+          <Link to="/upload" style={{
+            textDecoration: "none",
+            color: "#111"
+          }}>
+            <h5>upload</h5>
+          </Link>
         </div>
         <div className={classes.profileContainer}>
           <img className={classes.profile} src={profile} alt="profile user" />

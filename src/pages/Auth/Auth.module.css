@@ -48,6 +48,19 @@
     font-family: var(--body-font);
 }
 
+.selectInput {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    height: 3rem;
+    width: 250px;
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: var(--normal-font-size);
+}
+
 .registerContainer {
     width: 100%;
     display: flex;

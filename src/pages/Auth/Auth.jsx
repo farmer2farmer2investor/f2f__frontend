@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { register, logIn } from '../../actions/AuthAction.js';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import logo from '../../assets/logo.png'
-// styles
+import stateData from '../../assets/jsonData/stateAndDistrict.json';
+import logo from '../../assets/logo.png';
+
+// stylesheet
 import classes from './Auth.module.css';
 
 const Auth = () => {
@@ -16,7 +18,7 @@ const Auth = () => {
     profilePicture: "",
     landmark: "",
     district: "",
-    state: "",
+    state: "Andhra Pradesh",
     postalCode: "",
     confirmPass: ""
   };
@@ -119,16 +121,7 @@ const Auth = () => {
                 value={data.landmark}
                 onChange={handleChange}
               />
-              <input
-                required
-                type="text"
-                placeholder="district"
-                className={classes.infoInput}
-                name="district"
-                value={data.district}
-                onChange={handleChange}
-              />
-              <input
+              {/* <input
                 required
                 type="text"
                 placeholder="state"
@@ -136,7 +129,39 @@ const Auth = () => {
                 name="state"
                 value={data.state}
                 onChange={handleChange}
-              />
+              /> */}
+              <select
+                required
+                name="state"
+                value={data.state}
+                placeholder="state"
+                onChange={handleChange}
+                className={classes.selectInput}
+              >
+                {
+                  stateData.map((data, index) => (
+                    <option value={data.state} key={index}>
+                      {data.state}
+                    </option>
+                  ))
+                }
+              </select>
+              <select
+                required
+                name="district"
+                value={data.district}
+                placeholder="district"
+                onChange={handleChange}
+                className={classes.selectInput}
+              >
+                {
+                  stateData.find((stateObj) => stateObj.state === data.state).districts.map((data, index) => (
+                    <option value={data} key={index}>
+                      {data}
+                    </option>
+                  ))
+                }
+              </select>
               <input
                 required
                 type="number"
