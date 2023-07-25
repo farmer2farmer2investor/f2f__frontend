@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineHeart, AiOutlineLike } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import profile from '../../assets/profile.png';
 import postImage from '../../assets/postImage.jpg'
 
@@ -27,7 +27,7 @@ const Post = () => {
                 <img className={classes.postimage} src={postImage} alt="post" />
                 <div className={classes.contentInfo}>
                     <p className={classes.date}>4 April 2023</p>
-                    <p className={classes.heading}>🌾🚜 Greetings from the farm! 🚜🌾</p>
+                    <p className={classes.heading}>#Dairy</p>
                     <p className={classes.description}>Hey there, everyone! Just wanted to share the fruits of our labor here on the farm. It's that time of the year when all the hard work we've put in starts to pay off, and it's truly a rewarding feeling. 😊</p>
                 </div>
                 <div className={classes.likeContainer}>

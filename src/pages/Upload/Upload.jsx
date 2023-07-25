@@ -1,15 +1,27 @@
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { uploadPost } from '../../actions/UploadAction.js';
 import { FiUploadCloud } from 'react-icons/fi';
 
 // stylesheet
 import classes from './Upload.module.css';
 
 const Upload = () => {
+  
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
+  const userData = useSelector((state) => state.authReducer.authData);
+  const uploading = useSelector((state) => state.postReducer.uploading);
+
   const initialState = {
-    userId: "",
+    userId: userData ? userData._id : "",
     image: "",
-    description: "",
+    category: "",
     location: "",
+    description: "",
   }
   const [postDetails, setPostDetails] = useState(initialState);
   const fileInputRef = useRef(null);
@@ -37,6 +49,7 @@ const Upload = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("postDetails", postDetails);
+    dispatch(uploadPost(postDetails, navigate));
   }
 
 
@@ -54,7 +67,7 @@ const Upload = () => {
             <div className={classes.inputFileContainer}>
               <div className={classes.iconContainer}>
                 <FiUploadCloud className={classes.icon} />
-                <p>Upload Image</p>
+                <p>{ postDetails.image ? "Photo is Uploaded" : "Upload a Photo"}</p>
               </div>
               <div className={classes.descContainer}>
                 <p className={classes.subHeading}>png Or jpeg Or jpg</p>
@@ -126,8 +139,15 @@ const Upload = () => {
                 autoComplete='on'
               />
               <div className={classes.btnContainer}>
-                <button className={classes.discardBtn}>discard</button>
-                <button className={classes.postBtn} type='submit'>post</button>
+                <Link to="/home" style={{
+                  textDecoration: "none",
+                  color: "#111"
+                }}>
+                  <button className={classes.discardBtn}>discard</button>
+                </Link>
+                <button className={classes.postBtn} type='submit' disabled={uploading}>
+                  {uploading ? "Uploading" : "post"}
+                </button>
               </div>
             </div>
           </div>
