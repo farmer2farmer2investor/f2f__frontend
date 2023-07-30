@@ -13,15 +13,27 @@ import { TbToolsKitchen2Off } from 'react-icons/tb';
 // stylesheet
 import classes from './Sidebar.module.css';
 
-const Sidebar = () => {
+const Sidebar = ({ handleToggle, isToggle }) => {
+
+  const toggleHome = () => {
+    if (!isToggle) {
+      handleToggle();
+    }
+  }
+
+  const toggleNews = () => {
+    if (isToggle) {
+      handleToggle();
+    }
+  }
   return (
     <div className={classes.sidebar}>
       <div className={classes.menuContainer}>
-        <div>
+        <div onClick={toggleHome}>
           <FiHome className={classes.icon} />
           <h4>Home</h4>
         </div>
-        <div>
+        <div onClick={toggleNews}>
           <BsNewspaper className={classes.icon} />
           <h4>News</h4>
         </div>
@@ -71,14 +83,12 @@ const Sidebar = () => {
         </div>
       </div>
       <div className={classes.accountsContainer}>
-        <p>lorem</p>
-        <p>Lorem, ipsum.</p>
-        <p>lorem</p>
-        <p>Lorem, ip.</p>
-        <p>lorem</p>
-        <p>Lum.</p>
-        <p>lorem</p>
-        <p>Lorem, ipsum.</p>
+        <p>f2f</p>
+        <p>policy</p>
+        <p>copyright</p>
+        <p>office 24*7</p>
+        <p>investor</p>
+        <p>creaits</p>
       </div>
     </div>
   )

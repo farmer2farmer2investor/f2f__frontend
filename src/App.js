@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import Profile from './pages/Profile/Profile';
 import Auth from './pages/Auth/Auth';
 import Upload from './pages/Upload/Upload';
-import News from './pages/News/News';
 
 // stylesheet
 import './App.css';
@@ -58,10 +57,6 @@ const App = () => {
           <Route
             exact path='/upload'
             element={user ? <Upload /> : <Navigate to="../auth" />}
-          />
-          <Route
-            exact path='/news'
-            element={user ? <News /> : <Navigate to="../auth" />}
           />
           <Route
             exact path='*'
