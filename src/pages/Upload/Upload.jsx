@@ -18,6 +18,8 @@ const Upload = () => {
 
   const initialState = {
     userId: userData ? userData._id : "",
+    name: userData ? userData.name : "",
+    profilePicture: userData ? userData.profilePicture : "",
     image: "",
     category: "",
     location: "",

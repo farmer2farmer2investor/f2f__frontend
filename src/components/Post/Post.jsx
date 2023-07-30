@@ -7,32 +7,32 @@ import postImage from '../../assets/postImage.jpg'
 import classes from './Post.module.css';
 
 
-const Post = () => {
+const Post = ({ item }) => {
     return (
         <div className={classes.postContainer}>
             <div className={classes.topContainer}>
                 <div className={classes.imageContainer}>
-                    <img className={classes.profile} src={profile} alt="user profile" />
+                    <img className={classes.profile} src={item.profilePicture || profile} alt="user profile" />
                 </div>
                 <div className={classes.infoContainer}>
-                    <p>Laditya Gogoi</p>
+                    <p>{item.name}</p>
 
                     <p style={{
                         fontSize: ".75rem",
                         color: "#dee2e6"
-                    }}>chabua, dibrugarh</p>
+                    }}>{item.location}</p>
                 </div>
             </div>
             <div className={classes.contentContainer}>
-                <img className={classes.postimage} src={postImage} alt="post" />
+                <img className={classes.postimage} src={item.image || postImage} alt="post" />
                 <div className={classes.contentInfo}>
-                    <p className={classes.date}>4 April 2023</p>
-                    <p className={classes.heading}>#Dairy</p>
-                    <p className={classes.description}>Hey there, everyone! Just wanted to share the fruits of our labor here on the farm. It's that time of the year when all the hard work we've put in starts to pay off, and it's truly a rewarding feeling. 😊</p>
+                    <p className={classes.date}>{item.createdAt}</p>
+                    <p className={classes.heading}>{item.category}</p>
+                    <p className={classes.description}>{item.description}</p>
                 </div>
                 <div className={classes.likeContainer}>
-                    <p className={classes.count}>45 likes</p>
-                    <button className={classes.btn}>
+                    <p className={classes.count}>{item.likes.length} likes</p>
+                    <button className={classes.btn} onClick={() => console.log(item)}>
                         <AiOutlineHeart className={classes.icon} />
                     </button>
                 </div>
