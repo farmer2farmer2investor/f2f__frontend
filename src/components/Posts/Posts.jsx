@@ -10,12 +10,12 @@ import classes from './Posts.module.css';
 
 const Posts = () => {
   const dispatch = useDispatch();
-  const profileData = useSelector((state) => state.authReducer.authData);
+  const user = useSelector((state) => state.authReducer.authData);
   const loading = useSelector((state) => state.postReducer.loading);
   const postsData = useSelector((state) => state.postReducer.postsData);
 
   useEffect(() => {
-    dispatch(gettimelineposts(profileData._id));
+    dispatch(gettimelineposts(user._id));
   }, [])
 
   if (loading) {
@@ -28,10 +28,10 @@ const Posts = () => {
 
   return (
     <div className={classes.posts}>
-      <div onClick={() => console.log(postsData)}>
-        {postsData?.map((item, index) => (
+      <div>
+        {postsData?.map((data, index) => (
           <div key={index}>
-            <Post item={item} />
+            <Post user={user} data={data} />
           </div>
         ))}
       </div>
