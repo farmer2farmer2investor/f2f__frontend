@@ -27,3 +27,8 @@ export const logIn = (formData, navigate) => async (dispatch) => {
         dispatch({ type: "AUTH_FAIL" })
     }
 };
+
+// log out the farmer
+export const logOut = () => async (dispatch) => {
+    dispatch({ type: "LOG_OUT" });
+}

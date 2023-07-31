@@ -9,10 +9,6 @@ const PostsUser = () => {
     <div className={classes.postsuser}>
         <p className={classes.heading}>Your Recent Posts</p>
         <div>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
         </div>
     </div>
   )

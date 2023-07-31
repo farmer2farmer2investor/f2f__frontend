@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUser } from '../../actions/UserAction.js'
+import { FiMapPin } from 'react-icons/fi';
 import { GrConnect } from 'react-icons/gr';
 import testImage from '../../assets/test.png';
+import Setting from '../Setting/Setting';
 
 
 // stylesheet
 import classes from './About.module.css';
-import Setting from '../Setting/Setting';
 
-const About = () => {
+const About = ({ id }) => {
+    const dispatch = useDispatch();
+    const loading = useSelector((state) => state.userReducer.loading);
+    const data = useSelector((state) => state.userReducer.userData);
+
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [followers, setFollowers] = useState(data?.followers.length);
+    const [following, setFollowing] = useState(data?.following.length);
 
     const handleOpenPopup = () => {
         setIsPopupOpen(true);
@@ -17,19 +26,33 @@ const About = () => {
     const handleClosePopup = () => {
         setIsPopupOpen(false);
     }
+
+    useEffect(() => {
+        dispatch(getUser(id));
+    }, []);
+
+
+    if (loading) {
+        return (
+            <div className={classes.about}>
+                <p>loading</p>
+            </div>
+        )
+    }
+
     return (
         <div className={classes.about}>
             <div className={classes.imageContainer}>
-                <img className={classes.image} src={testImage} alt="profile" />
+                <img className={classes.image} src={data?.profilePicture || testImage} alt="profile" />
             </div>
             <div className={classes.nameContainer}>
-                <p className={classes.name}>Laditya Gogoi</p>
-                <p className={classes.farmerType}>dairy farmer</p>
+                <p className={classes.name}>{data?.name}</p>
+                <p className={classes.farmerType}>{data?.cultivation} farmer</p>
             </div>
             <div className={classes.statContainer}>
                 <div className={classes.followersContainer}>
                     <h3>followers</h3>
-                    <p>965</p>
+                    <p>{followers}</p>
                 </div>
                 <div style={{
                     width: '1.5px',
@@ -40,7 +63,7 @@ const About = () => {
                 </div>
                 <div className={classes.followingContainer}>
                     <h3>following</h3>
-                    <p>325</p>
+                    <p>{following}</p>
                 </div>
                 <div style={{
                     width: '1.5px',
@@ -48,23 +71,30 @@ const About = () => {
                     backgroundColor: "#13aa52",
                     borderRadius: "2px"
                 }}></div>
-                <div className={classes.creditContainer}>
+                <div className={classes.creditContainer} onClick={() => console.log(id)}>
                     <h3>Credits</h3>
                     <p>8222</p>
                 </div>
             </div>
             <div className={classes.infoContainer}>
-                <p className={classes.name}>About</p>
-                <p>Hey there! 🐄 I'm John, a passionate dairy farmer dedicated to nurturing happy and healthy cows. 🥛 Join me on this farm life journey as we produce the freshest milk and delicious dairy products straight from our farm to your table. #DairyFarmer #FarmLife #MilkTheMoments</p>
+                <p className={classes?.name}>About</p>
+                <p>{data?.about}</p>
+                <p className={classes.addressContainer}>
+                    <FiMapPin className={classes?.icon} />
+                    <p>{data?.landmark}, {data?.district}, {data?.state}, {data?.postalCode}</p>
+                </p>
                 <div className={classes.durationContainer}>
                     <GrConnect className={classes.icon} />
-                    <p>joined 6 months ago</p>
+                    <p>joined date {data?.createdAt}</p>
                 </div>
             </div>
-            <button className={classes.settingBtn} onClick={handleOpenPopup}>
-                <p>Setting</p>
-            </button>
-            { isPopupOpen && <Setting onClose={handleClosePopup} /> }
+
+            <div>
+                <button className={classes.settingBtn} onClick={handleOpenPopup}>
+                    <p>Setting</p>
+                </button>
+                {isPopupOpen && <Setting onClose={handleClosePopup} />}
+            </div>
         </div>
     )
 }

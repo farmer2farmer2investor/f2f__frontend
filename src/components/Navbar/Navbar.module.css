@@ -77,8 +77,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .profile {
     width: 40px;
+}
+
+.logoutContainer {
+    cursor: pointer;
+}
+
+.logoContainer {
+    cursor: pointer;
 }

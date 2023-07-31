@@ -86,3 +86,11 @@
     cursor: pointer;
     margin-top: 2rem;
 }
+
+.addressContainer {
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}

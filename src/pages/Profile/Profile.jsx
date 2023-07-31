@@ -2,10 +2,10 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import About from '../../components/About/About';
+import PostsUser from '../../components/PostsUser/PostsUser';
 
 // stylesheet
 import classes from './Profile.module.css';
-import PostsUser from '../../components/PostsUser/PostsUser';
 
 const Profile = () => {
   const { id } = useParams();
@@ -14,7 +14,7 @@ const Profile = () => {
     <div className={classes.profile}>
       <Navbar />
       <div className={classes.infoContainer}>
-        <About />
+        <About id={id} />
         <PostsUser />
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../actions/AuthAction';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FiPlus } from 'react-icons/fi';
 import { AiOutlineLogout } from 'react-icons/ai';
@@ -11,16 +13,22 @@ import profile from '../../assets/profile.png';
 import classes from './Navbar.module.css';
 
 const Navbar = () => {
-  const profileData = useSelector((state) => state.authReducer.authData);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.authReducer.authData);
   const [query, setQuery] = useState("");
 
   const handleChange = (e) => {
     setQuery(e.target.value);
   }
 
+  const handleLogout = () => {
+    dispatch(logOut());
+  }
+
   return (
     <div className={classes.navbarContainer}>
-      <div className={classes.logoContainer}>
+      <div className={classes.logoContainer} onClick={() => navigate('/home')}>
         <img className={classes.logo} src={logo} alt="logo f2f" />
       </div>
       <div className={classes.searchContainer}>
@@ -58,11 +66,11 @@ const Navbar = () => {
             <h5>upload</h5>
           </Link>
         </div>
-        <div className={classes.profileContainer}>
-          <img className={classes.profile} src={profileData.profilePicture || profile} alt="profile user" />
+        <div className={classes.profileContainer}  onClick={() => navigate(`/profile/${user._id}`)}>
+          <img className={classes.profile} src={user.profilePicture || profile} alt="profile user" />
         </div>
         <div className={classes.logoutContainer}>
-          <AiOutlineLogout className={classes.icon} />
+          <AiOutlineLogout className={classes.icon} onClick={handleLogout} />
         </div>
       </div>
     </div>

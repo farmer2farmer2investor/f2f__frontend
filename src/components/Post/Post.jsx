@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { likePost } from '../../api/PostRequest';
 import profile from '../../assets/profile.png';
 import postImage from '../../assets/postImage.jpg';
 
 // stylesheet
 import classes from './Post.module.css';
-import { likePost } from '../../api/PostRequest';
 
 const Post = ({ user, data }) => {
     const [liked, setLiked] = useState(data.likes.includes(user._id));
