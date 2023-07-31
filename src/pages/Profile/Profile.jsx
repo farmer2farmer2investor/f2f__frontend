@@ -15,7 +15,7 @@ const Profile = () => {
       <Navbar />
       <div className={classes.infoContainer}>
         <About id={id} />
-        <PostsUser />
+        <PostsUser id={id} />
       </div>
     </div>
   )

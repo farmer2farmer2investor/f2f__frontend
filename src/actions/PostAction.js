@@ -25,3 +25,15 @@ export const gettimelineposts = (id) => async (dispatch) => {
         dispatch({ type: "TIMELINE_FAIL"});
     }
 };
+
+
+export const userposts = (id) => async (dispatch) => {
+    dispatch({ type: "POSTS_START" });
+
+    try {
+        const { data } = await PostApi.userPosts(id);
+        dispatch({ type: "POSTS_SUCCESS", data: data });
+    } catch (error) {
+        dispatch({ type: "POSTS_FAIL" });
+    }
+}
